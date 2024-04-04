@@ -1,3 +1,7 @@
+FROM maven:3-amazoncorretto-17 AS builder
+COPY . /spring-petclinic
+RUN  cd /spring-petclinic && mvn package
+
 FROM amazoncorretto:11-alpine3.17
 LABEL author="nikhil"
 LABEL organization="practice"
