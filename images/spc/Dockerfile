@@ -3,7 +3,7 @@ COPY . /spring-petclinic
 RUN  cd /spring-petclinic && mvn package
 
 FROM amazoncorretto:17-alpine3.17
-LABEL author="khaja"
+LABEL author="Nikhil"
 LABEL organization="learningthoughts"
 ARG USERNAME='petclinic'
 ARG HOMEDIR='/petclinic'
