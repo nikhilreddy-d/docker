@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: nop
-          # image path/details of the nop commerce
+          # image path/repository of the nop commerce
           image: doddanikhil2001/nopcommerceaug23
           ports:
             - containerPort: 80
