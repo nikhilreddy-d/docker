@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nop-deploy
+spec:
+  minReadySeconds: 5
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nop
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: nop
+        version: v1.1
+    spec:
+      containers:
+        - name: nop
+          # image path/details of the nop commerce
+          image: doddanikhil2001/nopcommerceaug23
+          ports:
+            - containerPort: 80
+              protocol: TCP
